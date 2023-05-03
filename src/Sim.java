@@ -2,16 +2,25 @@ import java.util.Arrays;
 
 public class Sim {
 	String phone;
-	double credits;
-	String[] calls;
+	double credits = 0;
+	Call[] calls = new Call[]{};
 	
-	public Sim(String phone, double credits, String[] calls) {
+	public Sim(String phone) {
 		this.phone = phone;
-		this.credits = credits > 0 ? credits : 0;
-		this.calls = calls.length > 0 ? calls : {};
+	}
+	public Sim(String phone, double credits) {
+		this.phone = phone;
+		this. credits = credits;
+	}
+	public Sim(String phone, double credits, Call[] calls) {
+		this.phone = phone;
+		this.credits = credits ;
+		this.calls = calls;
 	}
 	
-	static void printSim(Sim s) {
-		System.out.println("Phone Number: " + s.phone +", Credits:" + s.credits + ", Calls: " + Arrays.toString(s.calls));
+	static String printSim(Sim s) {
+		String result = "Phone Number: " + s.phone +",\nCredits:" + s.credits + ", \nCalls:\n";
+		for(int i = 0; i < s.calls.length; i++) result += "["+ s.calls[i].duration + "," + s.calls[i].phone + "],\n";
+		return result;
 	}
 }
