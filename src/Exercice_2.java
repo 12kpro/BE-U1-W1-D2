@@ -10,11 +10,9 @@ public class Exercice_2 {
 		calls[1]= new Call(100,"+396548524");
 		calls[2]= new Call(50,"+396548856");
 		
-		System.out.println(Arrays.asList(calls));
-		
 		Sim newSim = new Sim("+39345548458",50,calls);
 		
-		System.out.print( Sim.printSim(newSim));
+		System.out.println( Sim.printSim(newSim));
 	}
 
 }

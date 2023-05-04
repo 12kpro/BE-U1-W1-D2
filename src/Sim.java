@@ -20,7 +20,7 @@ public class Sim {
 	
 	static String printSim(Sim s) {
 		String result = "Phone Number: " + s.phone +",\nCredits:" + s.credits + ", \nCalls:\n";
-		for(int i = 0; i < s.calls.length; i++) result += "["+ s.calls[i].duration + "," + s.calls[i].phone + "],\n";
+		for(int i = 0; i < s.calls.length; i++) result += " duration: "+ s.calls[i].duration + ", Phone: " + s.calls[i].phone + "\n";
 		return result;
 	}
 }
